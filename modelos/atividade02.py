@@ -44,6 +44,10 @@ class Restaurante:
     def __str__(self):
         return f"Restaurante: {self.nome}, Categoria: {self.categoria}"
 
+    @property
+    def ativo(self):
+        return "Ativado" if self.ativo else "Desativado"
+
 restaurante_exemplo = Restaurante("Restaurante Exemplo", "Italiano")
 print(restaurante_exemplo)  
 
