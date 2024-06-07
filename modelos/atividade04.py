@@ -22,28 +22,32 @@ class Livro:
         self._ativo = False
 
     # Adicionando um método para acessar o status do livro
-    @property
-    def ativo(self):
-        return self._ativo
+#     @property
+#     def ativo(self):
+#         return self._ativo
     
-livro1=Livro('Vermelho Branco Sangue Azul','Casey McQuiston', 2019)
-livro2=Livro('Heartstopper','Alice Oseman', 2016)
+# livro1=Livro('Vermelho Branco Sangue Azul','Casey McQuiston', 2019)
+# livro2=Livro('Heartstopper','Alice Oseman', 2016)
 
-livro1.livro_emprestado()
-livro2.livro_emprestado()
+# livro1.livro_emprestado()
+# livro2.livro_emprestado()
 
-print(livro1)
-print(livro2)
+# print(livro1)
+# print(livro2)
 
 
-print("Status do livro 1:", "Disponível" if livro1.ativo else "Não disponível")
-print("Status do livro 2:", "Disponível" if livro2.ativo else "Não disponível")
+# print("Status do livro 1:", "Disponível" if livro1.ativo else "Não disponível")
+# print("Status do livro 2:", "Disponível" if livro2.ativo else "Não disponível")
 
 # Questão
 
 @staticmethod
-def verificar_disponibilidade(self, ano):
-    self.ano = ano
-    return(f'Os livros publicados no ano de {self.ano} foram {self.livro1}')
-livro1=Livro(2019)
+def verificar_disponibilidade(ano):
+    livros_disponiveis=[livro for livro in Livro.livros if livro.ano_publicacao == ano and livro.disponivel]
+    for livro in livros_disponiveis:
+        print(f'livros disponiveis em {ano}: {livro}')
     
+livro1=Livro('Vermelho Branco Sangue Azul','Casey McQuiston', 2019)
+livro2=Livro('Heartstopper','Alice Oseman', 2016)
+
+Livro.livros=[livro1,livro2]
